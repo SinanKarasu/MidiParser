@@ -8,12 +8,25 @@
 
 import Foundation
 
-public struct MidiTime {
-    let inSeconds: TimeInterval
-    let inTicks: Ticks
+public struct MidiTime: Identifiable, Comparable{
+
+    public var id = UUID()
+    public static func < (lhs: MidiTime, rhs: MidiTime) -> Bool {
+        lhs.inSeconds < rhs.inSeconds
+    }
+
+    public static func == (lhs: MidiTime, rhs: MidiTime) -> Bool {
+        lhs.inSeconds == rhs.inSeconds
+    }
+
+
+    public let inSeconds: TimeInterval
+    public let inTicks: Ticks
 }
 
-public extension MidiTime {
+extension MidiTime {
+
+
     static var empty: MidiTime {
         return MidiTime(inSeconds: 0.0, inTicks: Ticks(0))
     }

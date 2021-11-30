@@ -9,7 +9,8 @@
 import AudioToolbox
 import Foundation
     
-public struct MidiNote {
+public struct MidiNote: Identifiable {
+    public var id = UUID()
     
     private let regularTempoTimeStamp: MusicTimeStamp
     private let regularDuration: Float32
