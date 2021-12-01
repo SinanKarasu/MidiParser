@@ -26,4 +26,25 @@ public enum PatchFamily: UInt8 {
     case ethnic
     case percussive
     case soundEffects
+
+    public var description : String {
+        switch self {
+        case .piano: return "Piano"
+        case .percussion: return "Chromatic Percussion"
+        case .organ: return "Organ"
+        case .guitar: return "Guitar"
+        case .bass: return "Bass"
+        case .strings: return "Strings"
+        case .ensemble: return "Ensemble"
+        case .brass: return "Brass"
+        case .reed: return "Reed"
+        case .pipe: return "Pipe"
+        case .synthLead: return "Synth Lead"
+        case .synthPad: return "Synth Pad"
+        case .synthEffects: return "Synth Effects"
+        case .ethnic: return "Ethnic"
+        case .percussive: return "Percussive"
+        case .soundEffects: return "Sound Effects"
+        }
+    }
 }
